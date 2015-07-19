@@ -46,7 +46,10 @@ if(!(test-path "$devkitInstallerBin"))
 
 
 & $cdir\$rubyInstallerBin /verysilent /lang=en /dir="$rubyInstallDir" /tasks="assocfiles,modpath,addtk" | write-output
-& $cdir\$devkitInstallerBin -o"$rubyInstallDir\devkit" -y | write-output
+# Use this PSCX to debug these aweful params
+# & "C:\Program Files\PowerShell Community Extensions\Pscx3\Pscx\Apps\EchoArgs.exe" $cdir\$devkitInstallerBin -y `-o$rubyInstallDir\devkit
+# also here: http://goo.gl/Y0dFbd
+& $cdir\$devkitInstallerBin `-o"$rubyInstallDir\devkit" -y | write-output
 
 
 
